@@ -13,10 +13,10 @@ UNIFYD focuses on clean UI, smooth user experience, and real-world shopping feat
 ![Collection Preview](./Preview/2.Shop_By_Collection.png)
 
 ### Color Tone
-![Color Tone Preview](./Preview/3.Color_Tone)
+![Color Tone Preview](./Preview/3.Color_Tone.png)
 
 ### Style Guide
-![Style Guide](./Preview/4.Style_Guide)
+![Style Guide](./Preview/4.Style_Guide.png)
 
 ### 🛒 Cart Page
 ![Cart Preview](./Preview/5.Cart.png)
