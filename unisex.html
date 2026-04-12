@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNISEX Collection| UNIFYD</title>
+    <link rel="stylesheet" href="products.css">
+    <link rel="stylesheet" href="collection.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    
+<!-- HERO BANNER -->
+<section class="collection-hero">
+  <h1>UNISEX COLLECTION</h1>
+  <p>Luxury fits curated for every vibe</p>
+</section>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <select id="categoryFilter" onchange="filterProducts()">
+  <option value="all">Category</option>
+  <option value="co-ord">Co-ord set</option>
+  <option value="hoodie">Oversized Hoodie</option>
+</select>
+
+<select id="priceFilter" onchange="filterProducts()">
+  <option value="all">Price</option>
+  <option value="low">Under ₹500</option>
+  <option value="mid">₹500 - ₹1000</option>
+  <option value="high">Above ₹1000</option>
+</select>
+</div>
+
+<div class="product-grid">
+
+  <!-- Product Card 1-->
+  <div class="product-card" data-category="Co-ord Set" data-price="1199" data-name="Co-ord Set">
+    <div class="product-img">
+    <img src="COLLECTION for website/UNISEX COLLECTION/off white co-ord set unisex.jpg" alt="Co-ord Set">
+    <i class="fa-regular fa-heart wishlist" onclick="addToWishlist(this, 'Co-ord Set', 1199, 'COLLECTION for website/UNISEX COLLECTION/off white co-ord set unisex.jpg', 'unisex.html')"></i>
+    </div>
+    <h3>Co-ord Set</h3>
+    <p>₹1199</p>
+
+  <!-- SIZE SELECTOR -->
+    <div class="size-selector">
+      <span class="size-btn">XS</span>
+      <span class="size-btn">S</span>
+      <span class="size-btn">M</span>
+      <span class="size-btn">L</span>
+      <span class="size-btn">XL</span>
+    </div>
+    <div class="product-actions">
+      <button class="size-chart-btn" onclick="openSizeChart()">Size Chart</button>
+      <button class="add-cart-btn" onclick="addToCartWithSize(this, 'Co-ord Set',1199)">Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- Product Card 2-->
+  <div class="product-card" data-category="Co-ord Set" data-price="1199" data-name="Co-ord Set">
+    <div class="product-img">
+    <img src="COLLECTION for website/UNISEX COLLECTION/biege brown hoodie.jpg" alt="Co-ord Set">
+    <i class="fa-regular fa-heart wishlist" onclick="addToWishlist(this, 'Co-ord Set', 1199, 'COLLECTION for website/UNISEX COLLECTION/biege brown hoodie.jpg','unisex.html')"></i>
+    </div>
+    <h3>Co-ord Set</h3>
+    <p>₹1199</p>
+
+    <!-- SIZE SELECTOR -->
+    <div class="size-selector">
+      <span class="size-btn">XS</span>
+      <span class="size-btn">S</span>
+      <span class="size-btn">M</span>
+      <span class="size-btn">L</span>
+      <span class="size-btn">XL</span>
+    </div>
+    <div class="product-actions">
+      <button class="size-chart-btn" onclick="openSizeChart()">Size Chart</button>
+      <button class="add-cart-btn" onclick="addToCartWithSize(this, 'Co-ord Set',799)">Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- Product Card 3-->
+  <div class="product-card" data-category="Oversized Hoodie" data-price="699" data-name="Oversized Hoodie">
+    <div class="product-img">
+    <img src="COLLECTION for website/UNISEX COLLECTION/blue hoodie.jpg" alt="Oversized Hoodie">
+    <i class="fa-regular fa-heart wishlist" onclick="addToWishlist(this, 'Oversized Hoodie', 699, 'COLLECTION for website/UNISEX COLLECTION/blue hoodie.jpg', 'unisex.html')"></i>
+    </div>
+    <h3>Oversized Hoodie</h3>
+    <p>₹699</p>
+
+    <!-- SIZE SELECTOR -->
+    <div class="size-selector">
+      <span class="size-btn">XS</span>
+      <span class="size-btn">S</span>
+      <span class="size-btn">M</span>
+      <span class="size-btn">L</span>
+      <span class="size-btn">XL</span>
+    </div>
+    <div class="product-actions">
+      <button class="size-chart-btn" onclick="openSizeChart()">Size Chart</button>
+      <button class="add-cart-btn" onclick="addToCartWithSize(this, 'Oversized Hoodie',699)">Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- Product Card 4-->
+  <div class="product-card" data-category="Oversized Hoodie" data-price="899" data-name="Oversized Hoodie">
+    <div class="product-img">
+    <img src="COLLECTION for website/UNISEX COLLECTION/Oversized Boxy fit Hoodie purple.jpg" alt="Oversized Hoodie">
+    <i class="fa-regular fa-heart wishlist" onclick="addToWishlist(this, 'Oversized Hoodie', 899, 'COLLECTION for website/UNISEX COLLECTION/Oversized Boxy fit Hoodie purple.jpg', 'unisex.html')"></i>
+    </div>
+    <h3>Oversized Hoodie</h3>
+    <p>₹899</p>
+
+    <!-- SIZE SELECTOR -->
+    <div class="size-selector">
+      <span class="size-btn">XS</span>
+      <span class="size-btn">S</span>
+      <span class="size-btn">M</span>
+      <span class="size-btn">L</span>
+      <span class="size-btn">XL</span>
+    </div>
+    <div class="product-actions">
+      <button class="size-chart-btn" onclick="openSizeChart()">Size Chart</button>
+      <button class="add-cart-btn" onclick="addToCartWithSize(this, 'Oversized Hoodie',899)">Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+<!-- SIZE CHART MODAL -->
+<div id="sizeChartModal" class="size-chart-modal">
+  <div class="size-chart-content">
+    <span class="close-modal" onclick="closeSizeChart()">&times;</span>
+    <h2>Size Chart</h2>
+
+    <div class="size-chart-wrapper">
+      <img src="COLLECTION for website/WOMENS COLLECTION/size chart.jpeg" alt="Size Chart">
+    </div>
+  </div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script src="cart.js"></script>
+<Script src="collection.js"></Script>
+
+</body>
+</html>

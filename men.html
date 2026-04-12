@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Men Collection | UNIFYD</title>
+<link rel="stylesheet" href="products.css">
+<link rel="stylesheet" href="collection.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- HERO BANNER -->
+<section class="collection-hero">
+  <h1>MEN COLLECTION</h1>
+  <p>Luxury fits curated for every vibe</p>
+</section>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <select id="categoryFilter" onchange="filterProducts()">
+    <option value="all">Category</option>
+    <option value="Zipper Sweatshirt">Zipper Sweatshirt</option>
+    <option value="Trench Coat">Trench Coat</option>
+    <option value="Full-Zip Hoodie">Full-Zip Hoodie</option>
+    <option value="Turtleneck">Turtleneck</option>
+  </select>
+
+  <select id="priceFilter" onchange="filterProducts()">
+  <option value="all">Price</option>
+  <option value="low">Under ₹500</option>
+  <option value="mid">₹500 - ₹1000</option>
+  <option value="high">Above ₹1000</option>
+  </select>
+</div>
+
+<div class="product-grid">
+
+  <!-- Product Card 1-->
+  <div class="product-card" data-category="Zipper Sweatshirt" data-price="599" data-name="Zipper Sweatshirt">
+    <div class="product-img">
+    <img src="COLLECTION for website/MENS COLLECTION/mens Zipper Sweatshirt/brown Zipper Sweatshirt.jpg" alt="Zipper Sweatshirt">
+    <i class="fa-regular fa-heart wishlist" onclick="addToWishlist(this, 'Zipper Sweatshirt', 599, 'COLLECTION for website/MENS COLLECTION/mens Zipper Sweatshirt/brown Zipper Sweatshirt.jpg', 'men.html')"></i>
+    </div>
+    <h3>Zipper Sweatshirt</h3>
+    <p>₹599</p>
+
+  <!-- SIZE SELECTOR -->
+    <div class="size-selector">
+      <span class="size-btn">S</span>
+      <span class="size-btn">M</span>
+      <span class="size-btn">L</span>
+      <span class="size-btn">XL</span>
+    </div>
+    <div class="product-actions">
+      <button class="size-chart-btn" onclick="openSizeChart()">Size Chart</button>
+      <button class="add-cart-btn" onclick="addToCartWithSize(this, 'Zipper Sweatshirt',599)">Add to Cart</button>
+    </div>
+  </div>
+  
+  <!-- Product Card 2 -->
+  <div class="product-card" data-category="Trench Coat" data-price="999" data-name="Trench Coat">
+    <div class="product-img">
+    <img src="COLLECTION for website/MENS COLLECTION/mens jacket/black mens long coat.jpg" alt="Trench Coat">
+    <i class="fa-regular fa-heart wishlist" onclick="addToWishlist(this, 'Trench Coat', 999, 'COLLECTION for website/MENS COLLECTION/mens jacket/black mens long coat.jpg', 'men.html')"></i>
+    </div>
+    <h3>Trench Coat</h3>
+    <p>₹999</p>
+
+  <!-- SIZE SELECTOR -->
+    <div class="size-selector">
+      <span class="size-btn">S</span>
+      <span class="size-btn">M</span>
+      <span class="size-btn">L</span>
+      <span class="size-btn">XL</span>
+    </div>
+    <div class="product-actions">
+    <button class="size-chart-btn" onclick="openSizeChart()">Size Chart</button>
+    <button class="add-cart-btn" onclick="addToCartWithSize(this, 'Trench Coat',999)">Add to Cart</button>
+    </div>
+  </div>
+  
+  <!-- Product Card 3-->
+  <div class="product-card" data-category="Full-Zip Hoodie" data-price="699" data-name="Full-Zip Hoodie">
+    <div class="product-img">
+    <img src="COLLECTION for website/MENS COLLECTION/Men's Full-Zip Hoodie/light grey Men's Full-Zip Hoodie.jpg" alt="Full-Zip Hoodie">
+    <i class="fa-regular fa-heart wishlist" onclick="addToWishlist(this, 'Full-Zip Hoodie', 699, 'COLLECTION for website/MENS COLLECTION/MensFullZipHoodie/light grey Mens Full ZipHoodie.jpg','men.html')"></i>
+    </div>
+    <h3>Full-Zip Hoodie</h3>
+    <p>₹699</p>
+
+  <!-- SIZE SELECTOR -->
+    <div class="size-selector">
+      <span class="size-btn">S</span>
+      <span class="size-btn">M</span>
+      <span class="size-btn">L</span>
+      <span class="size-btn">XL</span>
+    </div>
+    <div class="product-actions">
+    <button class="size-chart-btn" onclick="openSizeChart()">Size Chart</button>
+    <button class="add-cart-btn" onclick="addToCartWithSize(this, 'Full-Zip Hoodie',699)">Add to Cart</button>
+    </div>
+  </div>
+  
+  <!-- Product Card 4 -->
+  <div class="product-card" data-category="Turtleneck" data-price="499" data-name="Turtleneck">
+    <div class="product-img">
+    <img src="COLLECTION for website/MENS COLLECTION/turtleneck/beige turtleneck.jpg" alt="Turtleneck">
+    <i class="fa-regular fa-heart wishlist" onclick="addToWishlist(this, 'Turtleneck', 499, 'COLLECTION for website/MENS COLLECTION/Turtleneck/beige turtleneck.jpg', 'men.html')"></i>
+    </div>
+    <h3>Turtleneck</h3>
+    <p>₹499</p>
+
+  <!-- SIZE SELECTOR -->
+    <div class="size-selector">
+      <span class="size-btn">S</span>
+      <span class="size-btn">M</span>
+      <span class="size-btn">L</span>
+      <span class="size-btn">XL</span>
+    </div>
+    <div class="product-actions">
+    <button class="size-chart-btn" onclick="openSizeChart()">Size Chart</button>
+    <button class="add-cart-btn" onclick="addToCartWithSize(this, 'Turtleneck',499)">Add to Cart</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- SIZE CHART MODAL -->
+<div id="sizeChartModal" class="size-chart-modal">
+  <div class="size-chart-content">
+    <span class="close-modal" onclick="closeSizeChart()">&times;</span>
+    <h2>Size Chart</h2>
+
+    <div class="size-chart-wrapper">
+      <img src="COLLECTION for website/WOMENS COLLECTION/size chart.jpeg" alt="Size Chart">
+    </div>
+  </div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script src="cart.js"></script>
+<Script src="collection.js"></Script>
+</body>
+</html>
+

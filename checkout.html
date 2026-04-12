@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+
+<div class="payment-card">
+  <h1>💳 Payment Gateway</h1>
+  <p>Secure checkout simulation</p>
+
+  <button class="pay-btn" onclick="makePayment()">Pay Now</button>
+
+  <div class="loader" id="loader">
+    <span></span><span></span><span></span>
+  </div>
+
+  <div class="success-icon" id="success">✅</div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+  🎉 Order Placed Successfully!
+</div>
+
+<script src="checkout.js"></script>
+</body>
+</html>

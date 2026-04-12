@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UNIFYD | One Vibe. Every Fit.</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-left">
+    <div class="hamburger" onclick="menuClick()">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+    <div class="call-us" onclick="callUs()">Call Us</div>
+  </div>
+
+  <div class="brand" onclick="goHome()">UNIFYD</div>
+
+  <div class="nav-right">
+    <i class="fa-solid fa-magnifying-glass" onclick="searchClick()"></i>
+
+    <!-- Hidden Search Box -->
+    <input
+      type="text"
+      id="searchBox"
+      placeholder="Search products..."
+      onkeydown="searchRedirect(event)"
+      style="display:none;"
+    >
+
+    <i class="fa-regular fa-user" onclick="profileClick()"></i>
+
+    <!-- NEW WISHLIST ICON -->
+    <div class="wishlist-icon-wrapper" onclick="wishlistClick()">
+      <i class="fa-regular fa-heart"></i>
+      <span id="wishlist-count">0</span>
+    </div>
+
+    <i class="fa-solid fa-bag-shopping" onclick="cartClick()">
+      <span id="cart-count">0</span>
+    </i>
+  </div>
+
+  <p id="result"></p>
+</nav>
+
+<!-- SIDE MENU -->
+<div class="side-menu" id="sideMenu" onclick="event.stopPropagation()">
+  <ul>
+    <li onclick="goTo('collections')">Shop Collections</li>
+    <li onclick="goTo('under-tone-guide')">Skin Tone Guide</li>
+    <li onclick="goTo('style-guide')">Style Guide</li>
+  </ul>
+</div>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>HOLIDAY COLLECTION</h1>
+      <p style="font-size: 25px; margin-bottom: 30px; color: #f8e6c3;">Curated vacation outfits for every season</p>
+      <div class="hero-options">
+        <a href="holiday-her.html">FOR HER</a>
+        <a href="holiday-him.html">FOR HIM</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLLECTIONS SECTION -->
+  <section class="collections" id="collections">
+    <h2>SHOP BY COLLECTION</h2>
+    <div class="collection-grid">
+      <div class="collection-card" onclick="goToCategory('Women')">
+        <img src="/IMAGES FOR WEBSITE/women collection cover image.jpg" alt="Women Collection">
+        <div class="overlay">WOMEN</div>
+      </div>
+      <div class="collection-card" onclick="goToCategory('Men')">
+        <img src="IMAGES FOR WEBSITE/mens collection cover image.jpg" alt="Men Collection">
+        <div class="overlay">MEN</div>
+      </div>
+      <div class="collection-card" onclick="goToCategory('Unisex')">
+        <img src="IMAGES FOR WEBSITE/unisex collection cover imae.jpg" alt="Unisex Collection">
+        <div class="overlay">UNISEX</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- UNDER TONE GUIDE SECTION -->
+  <section class="under-tone-guide" id="under-tone-guide">
+    <h2>DISCOVER YOUR PERFECT COLORS</h2>
+    <div class="under-tone-container">
+      <p class="under-tone-intro">
+        Your under tone plays a crucial role in determining which colors make you look vibrant and healthy. 
+        Finding your perfect color palette can transform your entire wardrobe.
+      </p>
+      
+      <div class="under-tone-types">
+        <div class="under-tone-card">
+          <h3>COOL TONES</h3>
+          <p>Navy, Emerald, Burgundy, Lavender, Cool grey, Icy blue undertones. 
+            <br> Jewel tones like emerald, sapphire, and amethyst look stunning.</p>
+        </div>
+        <div class="under-tone-card">
+          <h3>WARM TONES</h3>
+          <p>Olive, Mustard, Rust, Camel, Coral, Warm browns undertones. 
+            <br>Earth tones like olive, terracotta, and mustard are perfect.</p>
+        </div>
+        <div class="under-tone-card">
+          <h3>NEUTRAL TONES</h3>
+          <p>Balance of warm and cool undertones. You can pull off most colors with confidence.
+            <br>Few colors are: Beige, Ivory, Off-white, Taupe, Charcoal, Soft grey.</p>
+        </div>
+      </div>
+      
+      <button class="identify-btn" onclick="openSkinToneModal()">HOW TO IDENTIFY YOUR UNDER TONE</button>
+    </div>
+  </section>
+
+<!-- STYLE GUIDE SECTION -->
+<section class="style-guide" id="style-guide">
+
+  <div class="section-top-label">CURATED FOR EVERY MOOD</div>
+
+  <div class="style-guide-content">
+    
+    <div class="style-image">
+      <img src="IMAGES FOR WEBSITE/Style Guide Image.jpg" alt="Style Guide">
+    </div>
+
+    <div class="style-text">
+      <h2>STYLE GUIDE</h2>
+      
+      <p class="style-description">
+        Discover how to style UNIFYD pieces your way. From streetwear essentials
+        to elevated everyday looks — this is where fashion meets individuality,
+        comfort, and confidence.
+      </p>
+
+      <p class="style-brand-line">
+        Minimal. Bold. Effortlessly wearable.
+      </p>
+      
+      <div class="style-features">
+        <div class="feature">
+          <span class="feature-icon">✦</span>
+          <h4>Comfort-Based Styling</h4>
+          <p>Learn to style outfits around your comfort level without compromising on fashion.</p>
+        </div>
+
+        <div class="feature">
+          <span class="feature-icon">✦</span>
+          <h4>Streetwear Essentials</h4>
+          <p>Build bold everyday looks with layering pieces, oversized silhouettes, and statement basics.</p>
+        </div>
+
+        <div class="feature">
+          <span class="feature-icon">✦</span>
+          <h4>Seasonal Adaptation</h4>
+          <p>Master the art of adapting the same outfit for different seasons, moods, and occasions.</p>
+        </div>
+      </div>
+
+      <div class="style-buttons">
+        <button class="primary-btn" onclick="window.location.href='style-guide.html'">EXPLORE STYLE GUIDE</button>
+        <button class="secondary-btn" onclick="goToCollection()">SHOP COLLECTION</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h3>UNIFYD</h3>
+        <p>One Vibe. Every Fit.</p>
+        <p style="margin-top: 15px; font-size: 14px;">Your destination for personalized fashion styling</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>SHOP</h4>
+        <ul>
+          <li><a href="#" onclick="goToCategory('Women'); return false;">Women</a></li>
+          <li><a href="#" onclick="goToCategory('Men'); return false;">Men</a></li>
+          <li><a href="#" onclick="goToCategory('Unisex'); return false;">Unisex</a></li>
+          <li><a href="#" onclick="goTo('style-guide'); return false;">Style Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4>HELP</h4>
+        <ul>
+          <li><a href="#" onclick="contactUs(); return false;">Contact Us</a></li>
+          <li><a href="#" onclick="openModal('shipping'); return false;">Shipping & Returns</a></li>
+          <li><a href="#" onclick="openModal('size-guide'); return false;">Size Guide</a></li>
+          <li><a href="#" onclick="openModal('privacy'); return false;">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h4>FOLLOW US</h4>
+        <div class="social-icons">
+          <i class="fa-brands fa-instagram" onclick="window.open('https://instagram.com', '_blank')"></i>
+          <i class="fa-brands fa-x-twitter" onclick="window.open('https://twitter.com', '_blank')"></i>
+          <i class="fa-brands fa-facebook-f" onclick="window.open('https://facebook.com', '_blank')"></i>
+        </div>
+        <p style="margin-top: 20px; font-size: 14px; color: #777;">
+          Email: style@unifyd.com<br>
+          Phone: +1 (555) 123-4567
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2025 UNIFYD. All Rights Reserved.
+      <p>Terms & Conditions | Privacy Policy | Cookie Policy</p>
+    </div>
+  </footer>
+
+  <!-- MODALS -->
+  <div class="modal" id="skinToneModal">
+    <div class="modal-content">
+      <div class="modal-close" onclick="closeModal('skinToneModal')">×</div>
+      <h2>How to Identify Your Skin Tone</h2>
+      <div style="margin-bottom: 30px;">
+        <h3 style="color: #f8e6c3; margin-bottom: 15px;">Vein Test</h3>
+        <p>Look at the veins on your wrist in natural light:</p>
+        <ul style="margin-left: 20px; margin-top: 10px; line-height: 1.8;">
+          <li><strong>Blue/Purple veins:</strong> Cool undertones</li>
+          <li><strong>Green veins:</strong> Warm undertones</li>
+          <li><strong>Blue-green veins:</strong> Neutral undertones</li>
+        </ul>
+      </div>
+      
+      <div style="margin-bottom: 30px;">
+        <h3 style="color: #f8e6c3; margin-bottom: 15px;">Jewelry Test</h3>
+        <p>Which metal looks better on you?</p>
+        <ul style="margin-left: 20px; margin-top: 10px; line-height: 1.8;">
+          <li><strong>Silver jewelry:</strong> Cool undertones</li>
+          <li><strong>Gold jewelry:</strong> Warm undertones</li>
+          <li><strong>Both look good:</strong> Neutral undertones</li>
+        </ul>
+      </div>
+      
+      <div style="margin-bottom: 30px;">
+        <h3 style="color: #f8e6c3; margin-bottom: 15px;">Sun Reaction</h3>
+        <p>How does your skin react to sun exposure?</p>
+        <ul style="margin-left: 20px; margin-top: 10px; line-height: 1.8;">
+          <li><strong>Burns easily, tans poorly:</strong> Cool undertones</li>
+          <li><strong>Tans easily, rarely burns:</strong> Warm undertones</li>
+          <li><strong>Moderate tanning:</strong> Neutral undertones</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="styleGuideModal">
+    <div class="modal-content">
+      <div class="modal-close" onclick="closeModal('styleGuideModal')">×</div>
+      <h2>Complete Style Guide</h2>
+      
+      <div style="margin-bottom: 30px;">
+        <h3 style="color: #f8e6c3; margin-bottom: 15px;">The Art of Layering</h3>
+        <p>Master the technique of layering to create versatile outfits that work for multiple seasons.</p>
+      </div>
+      
+      <div style="margin-bottom: 30px;">
+        <h3 style="color: #f8e6c3; margin-bottom: 15px;">Color Coordination</h3>
+        <p>Learn how to combine colors effectively based on your skin tone and personal preferences.</p>
+      </div>
+      
+      <div style="margin-bottom: 30px;">
+        <h3 style="color: #f8e6c3; margin-bottom: 15px;">Accessory Styling</h3>
+        <p>Discover how accessories can transform a simple outfit into a fashion statement.</p>
+      </div>
+      
+      <div style="margin-bottom: 30px;">
+        <h3 style="color: #f8e6c3; margin-bottom: 15px;">Comfort Meets Style</h3>
+        <p>Find the perfect balance between comfort and fashion with our expert tips.</p>
+      </div>
+    </div>
+  </div>
+
+<script src="index.js"></script>
+</body>
+</html>

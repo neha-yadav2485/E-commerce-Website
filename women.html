@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Women Collection | UNIFYD</title>
+  <link rel="stylesheet" href="products.css">
+  <link rel="stylesheet" href="collection.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- HERO BANNER -->
+<section class="collection-hero">
+  <h1>WOMEN COLLECTION</h1>
+  <p>Luxury fits curated for every vibe</p>
+</section>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <select id="categoryFilter" onchange="filterProducts()">
+    <option value="all">Category</option>
+    <option value="Turtleneck">Turtleneck</option>
+    <option value="Sweatshirt">Sweatshirt</option>
+    <option value="Fitted top">Fitted top</option>
+    <option value="Leather jacket">Jacket</option>
+  </select>
+
+  <select id="priceFilter" onchange="filterProducts()">
+    <option value="all">Price</option>
+    <option value="low">Under ₹500</option>
+    <option value="mid">₹500 - ₹1000</option>
+    <option value="high">Above ₹1000</option>
+  </select>
+</div>
+
+<div class="product-grid">
+
+  <!-- Product Card 1 -->
+  <div class="product-card" data-category="Turtleneck" data-price="599" data-name="Turtleneck">
+    <div class="product-img">
+      <img src="COLLECTION for website/WOMENS COLLECTION/Womens Turtleneck/blue Womens Turtleneck.jpg" alt="Turtleneck">
+      <i class="fa-regular fa-heart wishlist" onclick="addToWishlist(this, 'Turtleneck', 599, 'COLLECTION for website/WOMENS COLLECTION/Womens Turtleneck/blue Womens Turtleneck.jpg', 'women.html')"></i>
+    </div>
+    <h3>Turtleneck</h3>
+    <p>₹599</p>
+    <div class="size-selector">
+      <span class="size-btn">XS</span>
+      <span class="size-btn">S</span>
+      <span class="size-btn">M</span>
+      <span class="size-btn">L</span>
+    </div>
+    <div class="product-actions">
+      <button class="size-chart-btn" onclick="openSizeChart()">Size Chart</button>
+      <button class="add-cart-btn" onclick="addToCartWithSize(this, 'Turtleneck', 599)">Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- Product Card 2 -->
+  <div class="product-card" data-category="Sweatshirt" data-price="999" data-name="Sweatshirt">
+    <div class="product-img">
+      <img src="COLLECTION for website/WOMENS COLLECTION/sweatshirt/brown sweatshirt.jpg" alt="Sweatshirt">
+      <i class="fa-regular fa-heart wishlist" onclick="addToWishlist(this, 'Sweatshirt', 999, 'COLLECTION for website/WOMENS COLLECTION/sweatshirt/brown sweatshirt.jpg', 'women.html')"></i>
+    </div>
+    <h3>Sweatshirt</h3>
+    <p>₹999</p>
+
+    <div class="size-selector">
+      <span class="size-btn">XS</span>
+      <span class="size-btn">S</span>
+      <span class="size-btn">M</span>
+      <span class="size-btn">L</span>
+      <span class="size-btn">XL</span>
+    </div>
+
+    <div class="product-actions">
+      <button class="size-chart-btn" onclick="openSizeChart()">Size Chart</button>
+      <button class="add-cart-btn" onclick="addToCartWithSize(this, 'Sweatshirt', 999)">Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- Product Card 3 -->
+  <div class="product-card" data-category="Fitted top" data-price="399" data-name="Fitted top">
+    <div class="product-img">
+      <img src="COLLECTION for website/WOMENS COLLECTION/fitted top/black fitted top.jpg" alt="Fitted top">
+      <i class="fa-regular fa-heart wishlist" onclick="addToWishlist(this, 'Fitted top', 399, 'COLLECTION for website/WOMENS COLLECTION/fitted top/black fitted top.jpg', 'women.html')"></i>
+    </div>
+    <h3>Fitted top</h3>
+    <p>₹399</p>
+
+    <div class="size-selector">
+      <span class="size-btn">XS</span>
+      <span class="size-btn">S</span>
+      <span class="size-btn">M</span>
+    </div>
+
+    <div class="product-actions">
+      <button class="size-chart-btn" onclick="openSizeChart()">Size Chart</button>
+      <button class="add-cart-btn" onclick="addToCartWithSize(this, 'Fitted top', 399)">Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- Product Card 4 -->
+  <div class="product-card" data-category="Leather jacket" data-price="999" data-name="Maroon crop leather jacket">
+    <div class="product-img">
+      <img src="COLLECTION for website/WOMENS COLLECTION/leather jacket/maroon crop leather jacket.jpg" alt="Maroon crop leather jacket">
+      <i class="fa-regular fa-heart wishlist" onclick="addToWishlist(this, 'Maroon crop leather jacket', 999, 'COLLECTION for website/WOMENS COLLECTION/leather jacket/maroon crop leather jacket.jpg', 'women.html')"></i>
+    </div>
+    <h3>Maroon crop leather jacket</h3>
+    <p>₹999</p>
+
+    <div class="size-selector">
+      <span class="size-btn">S</span>
+      <span class="size-btn">M</span>
+      <span class="size-btn">L</span>
+      <span class="size-btn">XL</span>
+    </div>
+
+    <div class="product-actions">
+      <button class="size-chart-btn" onclick="openSizeChart()">Size Chart</button>
+      <button class="add-cart-btn" onclick="addToCartWithSize(this, 'Maroon crop leather jacket', 999)">Add to Cart</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- SIZE CHART MODAL -->
+<div id="sizeChartModal" class="size-chart-modal">
+  <div class="size-chart-content">
+    <span class="close-modal" onclick="closeSizeChart()">&times;</span>
+    <h2>Size Chart</h2>
+
+    <div class="size-chart-wrapper">
+      <img src="COLLECTION for website/WOMENS COLLECTION/size chart.jpeg" alt="Size Chart">
+    </div>
+  </div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script src="cart.js"></script>
+<script src="collection.js"></script>
+</body>
+</html>
