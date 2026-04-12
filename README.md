@@ -4,6 +4,27 @@ A modern and responsive fashion e-commerce website built using **HTML, CSS, and 
 UNIFYD focuses on clean UI, smooth user experience, and real-world shopping features.
 
 ---
+## 📸 Preview
+
+### 🏠 Home Page
+![Home Preview](./Preview/1.Home_Page.png)
+
+### 🛍️ Shop by Collection
+![Collection Preview](./Preview/2.Shop_By_Collection.png)
+
+### Color Tone
+![Color Tone Preview](./Preview/3.Color_Tone)
+
+### Style Guide
+![Style Guide](./Preview/4.Style_Guide)
+
+### 🛒 Cart Page
+![Cart Preview](./Preview/5.Cart.png)
+
+### ❤️ Wishlist Page
+![Wishlist Preview](./Preview/6.Wishlist.png)
+
+---
 
 ## ✨ Features
 
