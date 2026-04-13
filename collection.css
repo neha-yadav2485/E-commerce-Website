@@ -219,10 +219,32 @@ body {
 }
 
 /* ===== SIZE CHART MODAL ===== */
+.size-chart-btn {
+  padding: 10px 22px;
+  border: none;
+  border-radius: 30px;
+  background: #e9e3dd;
+  color: #222;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+  z-index: 10;
+  position: relative;
+}
+
+.size-chart-btn:hover {
+  background: #d8cfc7;
+  transform: translateY(-2px);
+}
+
 .size-chart-modal {
   display: none;
   position: fixed;
-  inset: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
   background: rgba(0,0,0,0.65);
   z-index: 9999;
   justify-content: center;
@@ -230,37 +252,39 @@ body {
   padding: 20px;
 }
 
-.size-chart-modal.active {
+.size-chart-modal.show {
   display: flex;
 }
 
 .size-chart-content {
   background: #fff;
-  width: 100%;
-  max-width: 900px;
-  max-height: 90vh;
-  overflow-y: auto;
+  width: 90%;
+  max-width: 700px;
   border-radius: 18px;
   padding: 24px;
   position: relative;
+  text-align: center;
+  animation: popupFade 0.3s ease;
 }
 
 .size-chart-content h2 {
   text-align: center;
   margin-bottom: 20px;
+  font-size: 28px;
 }
 
 .size-chart-wrapper img {
   width: 100%;
-  height: auto;
-  display: block;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 12px;
 }
 
 .close-modal {
   position: absolute;
   top: 10px;
   right: 18px;
-  font-size: 32px;
+  font-size: 30px;
   cursor: pointer;
 }
 
@@ -269,6 +293,17 @@ body {
   .product-grid {
     grid-template-columns: repeat(3, 1fr);
     padding: 30px 24px 60px;
+  }
+}
+
+@keyframes popupFade {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
