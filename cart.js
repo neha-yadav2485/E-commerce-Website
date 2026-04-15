@@ -29,13 +29,12 @@ function updateWishlistCount() {
 }
 
 // Add to wishlist
-function addToWishlist(button, name, price, page = "women.html") {
+function addToWishlist(button, name, price, image = "", page = "women.html") {
   let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
 
   const card = button.closest(".product-card");
-  let image = "";
 
-  if (card) {
+  if (!image && card) {
     const imgEl = card.querySelector("img");
     if (imgEl) {
       image = imgEl.getAttribute("src");
@@ -59,6 +58,10 @@ function addToWishlist(button, name, price, page = "women.html") {
   });
 
   localStorage.setItem("wishlist", JSON.stringify(wishlist));
+
+  // refresh global wishlist variable
+  window.wishlist = wishlist;
+
   updateWishlistCount();
 
   button.classList.remove("fa-regular");
@@ -66,12 +69,13 @@ function addToWishlist(button, name, price, page = "women.html") {
   button.style.color = "red";
 
   showToast(name + " added to wishlist!", "success");
-
 }
 
 // Add to cart with size
 function addToCartWithSize(button, name, price) {
   const card = button.closest(".product-card");
+  if (!card) return;
+
   const selectedSize = card.querySelector(".size-btn.selected");
 
   if (!selectedSize) {
@@ -79,11 +83,19 @@ function addToCartWithSize(button, name, price) {
     return;
   }
 
-  const size = selectedSize.innerText;
+  const size = selectedSize.innerText.trim();
 
-  cart.push({ name, price, size, qty: 1 });
+  const existingItem = cart.find(
+    item => item.name === name && item.size === size
+  );
+
+  if (existingItem) {
+    existingItem.qty += 1;
+  } else {
+    cart.push({ name, price, size, qty: 1 });
+  }
+
   localStorage.setItem("cart", JSON.stringify(cart));
-
   showToast(name + " (" + size + ") added to cart!", "success");
 }
 
@@ -91,7 +103,6 @@ function addToCartWithSize(button, name, price) {
 document.addEventListener("click", function (e) {
   if (e.target.classList.contains("size-btn")) {
     const parent = e.target.closest(".size-selector");
-
     if (!parent) return;
 
     parent.querySelectorAll(".size-btn").forEach(btn => {
@@ -99,6 +110,61 @@ document.addEventListener("click", function (e) {
     });
 
     e.target.classList.add("selected");
+  }
+});
+
+// FILTER PRODUCTS
+function filterProducts() {
+  const categoryValue = document.getElementById("categoryFilter")?.value || "all";
+  const priceValue = document.getElementById("priceFilter")?.value || "all";
+  const productCards = document.querySelectorAll(".product-card");
+
+  productCards.forEach(card => {
+    const category = card.getAttribute("data-category");
+    const price = parseInt(card.getAttribute("data-price"));
+
+    let categoryMatch = categoryValue === "all" || category === categoryValue;
+    let priceMatch = false;
+
+    if (priceValue === "all") {
+      priceMatch = true;
+    } else if (priceValue === "low") {
+      priceMatch = price < 500;
+    } else if (priceValue === "mid") {
+      priceMatch = price >= 500 && price <= 1000;
+    } else if (priceValue === "high") {
+      priceMatch = price > 1000;
+    }
+
+    if (categoryMatch && priceMatch) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+}
+
+// SIZE CHART MODAL OPEN
+function openSizeChart() {
+  const modal = document.getElementById("sizeChartModal");
+  if (modal) {
+    modal.style.display = "flex";
+  }
+}
+
+// SIZE CHART MODAL CLOSE
+function closeSizeChart() {
+  const modal = document.getElementById("sizeChartModal");
+  if (modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Close modal when clicking outside content
+window.addEventListener("click", function (e) {
+  const modal = document.getElementById("sizeChartModal");
+  if (e.target === modal) {
+    closeSizeChart();
   }
 });
 
@@ -180,10 +246,7 @@ function clearCart() {
   showCart();
 }
 
-function openSizeChart() {
-  showToast("Size Chart: XS, S, M, L available", "success");
-}
-
 // Load
 updateWishlistCount();
 showCart();
+filterProducts();
